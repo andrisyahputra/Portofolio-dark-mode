@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portofolio landing page with darkmode</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        body {
+            font-family: poppins, arial, sans-serif;
+            overflow-x: hidden;
+            transition: all ease 0.5s;
+        }
+
+        header {
+            padding: 25px 60px;
+        }
+
+        .logo {
+            float: left;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .menu {
+            float: right;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 0 24px;
+        }
+
+        /* remove lasst elemnt padding */
+        ul li:last-child a {
+            padding-right: 0;
+        }
+
+        .content {
+            position: relative;
+            display: flex;
+            width: 90%;
+        }
+
+        .gambarku-image {
+            margin: 60px 60px 40px;
+            width: 380px;
+            float: left;
+        }
+
+        .gambarku-text {
+            float: left;
+            margin: 160px 0;
+        }
+
+        .gambarku-text h1 {
+            font-size: 72px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .gambarku-text h1 b {
+            font-weight: 600;
+        }
+
+        .gambarku-text h5 {
+            font-weight: 400;
+            font-size: 18px;
+            margin: -10px 5px 0;
+            display: block;
+            position: relative;
+        }
+
+        .gambarku-text h5:after {
+            content: '';
+            position: absolute;
+            width: 32%;
+            height: 2px;
+            background-color: #000;
+            top: 50%;
+            right: 0;
+        }
+
+        .content .next-btn {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+        }
+
+        /* Now i styling switch button */
+        /* TOGGLE SWICTH */
+        ul li.switch a {
+            position: relative;
+            display: inline-block;
+            width: 45px;
+            height: 24px;
+            border: 1px solid #000;
+            border-radius: 50px;
+        }
+
+        ul li.switch a:before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50px;
+            background-color: #000;
+            left: 4px;
+            top: 3px;
+            transition: all ease 0.5s;
+        }
+
+        .switchMode ul li.switch a:before {
+            left: 24px;
+        }
+
+        /* SWICTH MODE STYLE */
+        .switchMode {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .switchMode .logo,
+        .switchMode ul li a,
+        .switchMode .content .next-btn {
+            color: #fff;
+        }
+
+        .switchMode .gambarku-text h5:after {
+            background-color: #fff;
+        }
+
+        /* INI ADALAH SWITCH COLOR */
+        .switchMode ul li.switch a {
+            background-color: #fff;
+            border-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <header>
+
+            <!-- leff side -->
+            <div class="logo">Andrimc</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portofolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="switch"><a href="javascript:void(0);"></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="gambarku-image">
+                <img src="img/gambarku.png" alt="">
+            </div>
+            <div class="gambarku-text">
+                <h1>Andri <b>Syahputra</b></h1>
+                <h5>Hoby Main futsal & ingin menjadi Programer</h5>
+            </div>
+            <a href="#" class="next-btn">Next</a>
+        </div>
+    </div>
+
+    <!-- Please add jquery cdn link -->
+    <script src="Jquery/jquery-3.5.0.min.js"></script>
+    <script>
+        $(function () {
+
+            // Now i adding aclass when i click switch button to toggle class body
+            $(".switch").click(function () {
+                $("body").toggleClass("switchMode");
+            })
+        });
+    </script>
+</body>
+
+</html>
